@@ -170,7 +170,7 @@ $Malio_Config['shop_style'] = 'plans';    // 商店的显示风格， legacy为S
 $Malio_Config['shop_enable_autorenew'] = true;   // 商店是否显示自动续费的选项
 $Malio_Config['shop_enable_coupon'] = true;    // 商店是否显示试用优惠券选项
 
-$Malio_Config['shop_enable_trail_plan'] = true;   // 商店是否显示新用户试用选项
+$Malio_Config['shop_enable_trail_plan'] = false;   // 商店是否显示新用户试用选项
 $Malio_Config['shop_trail_plan_shopid'] = '12';   // 新用户试用的商品ID
 
 $Malio_Config['index_one_row_plans'] = '3';   //  首页里每行显示多少个会员计划，可以写 3 或 4

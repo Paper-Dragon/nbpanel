@@ -8,7 +8,6 @@ $I18N['appName'] = array(
 $I18N['class-plan-name-map'] = array(  // 用户等级 => 等级名字
     'en' => array(
         1 => 'Basic',
-        2 => 'Plus',
         3 => 'Pro'
     ),
     'zh-cn' => array(
@@ -1035,7 +1034,8 @@ $I18N['store-title'] = array(
 );
 $I18N['store-sub-title'] = array(
     'en' => 'We Dedicate to Providing the Finest Network Proxy Service',
-    'zh-cn' => '竭尽全力为您提供优质的服务'
+    'zh-cn' => '竭尽全力为您提供优质的服务<br>
+    新用户首次购买全场85折优惠码: <span style="color:red">Welcome</span>，可否帮忙推荐给朋友？'
 );
 $I18N['start-trail'] = array(
     'en' => 'Start Trail',
