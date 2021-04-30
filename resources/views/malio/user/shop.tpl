@@ -384,9 +384,9 @@
                 <hr class="mt-2">
                 <div class="text-md-right">
                   <div class="float-lg-left mb-lg-0 mb-3">
-                    <button id="coupon-btn" class="btn btn-primary btn-icon icon-left" data-toggle="modal" data-target="#coupon-modal"><i class="fas fa-tag"></i> {$i18n->get('apply-promo-code')}</button>
+                    <button id="coupon-btn" class="btn btn-primary btn-icon icon-left" data-toggle="modal" data-target="#coupon-modal" ><i class="fas fa-tag"></i> {$i18n->get('apply-promo-code')}</button>
                   </div>
-                  <button id="pay-confirm" class="btn btn-warning btn-icon icon-left"><i class="fas fa-check"></i> {$i18n->get('pay-now')}</button>
+                  <button id="pay-confirm" class="btn btn-warning btn-icon icon-left"  disabled><i class="fas fa-check" ></i> {$i18n->get('pay-now')}</button>
                 </div>
 
               </div>

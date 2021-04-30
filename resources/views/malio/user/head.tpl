@@ -50,6 +50,16 @@
 <script async src="https://www.google-analytics.com/analytics.js"></script>
 <!-- End Google Analytics -->
 {/if}
-
+<script>
+    function check(){
+        var checkbox = document.getElementById("agree");
+        if(checkbox.checked == true ){
+            document.getElementById("pay-confirm").disabled="";
+        }
+        else{
+            document.getElementById("pay-confirm").disabled="disabled";
+        }
+    }
+</script>
 {if $malio_config['enable_crisp'] == true}{include file='crisp.tpl'}{/if}
 {if $malio_config['enable_chatra'] == true}{include file='chatra.tpl'}{/if}
