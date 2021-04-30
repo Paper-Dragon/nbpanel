@@ -207,7 +207,7 @@ $I18N['plans-info'] = array(   // 会员计划的信息， 可以复制array增�
                 ),
                 array(
                     'support' => true,
-                    'name' => '2个 在线客户端'
+                    'name' => '3个 在线客户端'
                 ),
                 array(
                     'support' => true,
@@ -239,7 +239,7 @@ $I18N['plans-info'] = array(   // 会员计划的信息， 可以复制array增�
                 ),
                 array(
                     'support' => true,
-                    'name' => '4个 在线客户端'
+                    'name' => '5个 在线客户端'
                 ),
                 array(
                     'support' => true,
@@ -271,7 +271,7 @@ $I18N['plans-info'] = array(   // 会员计划的信息， 可以复制array增�
                 ),
                 array(
                     'support' => true,
-                    'name' => '8个 在线客户端'
+                    'name' => '10个 在线客户端'
                 ),
                 array(
                     'support' => true,
@@ -407,7 +407,7 @@ $I18N['not-a-reason-to-use'] = array(
 );
 $I18N['just-a-statistic'] = array(
     'en' => '<span class="font-weight-500">just a</span> statistic',
-    'zh-cn' => '迄今为止
+    'zh-cn' => '<span class="font-weight-500">迄今</span> 为止
     '
 );
 $I18N['index-servers'] = array(
@@ -612,7 +612,7 @@ $I18N['index-more-features'] = array(
         ),
     )
 );
-$I18N['index-user-reviews'] = array(
+$I18N['index-user-reviews0'] = array( //注释评论 index-user-reviews
     'en' => [
         array(
             'user' => 'xxx',
@@ -676,7 +676,8 @@ $I18N['login_welcome'] = array(
 );
 $I18N['login_slogan'] = array(
     'en' => 'We Dedicate to Providing the Finest Network Proxy Service',
-    'zh-cn' => '这是一句好听顺嘴而且不长不短刚刚好的Slogan<br>甚至可以写第二行'
+    //'zh-cn1' => '这是一句好听顺嘴而且不长不短刚刚好的Slogan<br>甚至可以写第二行'
+    'zh-cn' => '<p class="text-muted">全心全意伴您访问您所喜爱的内容</p>'
 );
 $I18N['please-fill-in-your-email'] = array(
     'en' => 'Please fill in your email',
@@ -1099,8 +1100,16 @@ $I18N['read-before-subscribe-content'] = array(
         <div class="bullet"></div> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     ',
     'zh-cn' => '
-        <div class="bullet"></div> 购买会员计划即代表同意《服务条款》和《使用政策》。<br>
-        <div class="bullet"></div> 流量每30天重置一次 (从购买日开始计算)，未使用的流量不结转到下个周期。
+        <div class="form-group">
+            <div class="custom-control custom-checkbox">
+            <input type="checkbox" name="agree" class="custom-control-input" id="agree" onclick="check()">
+                <label class="custom-control-label" for="agree">购买即代表同意 <a href="/tos" target="blank">服务条款 </a>和上述全部条约</label><br>
+                <label class="custom-control-label" for="agree">我已经了解并同意了在特殊时期我们采取的是<b>“尽力服务”策略</b></label><br>
+                <label class="custom-control-label" for="agree">我已经了解并同意了如无其他原则性问题，我们不予退款到原支付方式</label><br>
+                <label class="custom-control-label" for="agree">请再次确认即使您的套餐还没有过期，购买新的套餐仍然会将您原先的套餐覆盖</label><br>
+                <label class="custom-control-label" for="agree">请确定支付的金额大于 <b>5</b> 元,小额度请使用<a href="https://www.pkfaka.com/liebiao/EACE29634E960F12" target="blank"><b>  发卡网  </b></a>进行支付</label> <br><br>
+            </div>
+        </div>
     '
 );
 $I18N['product-name'] = array(

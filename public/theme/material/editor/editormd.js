@@ -145,7 +145,7 @@
         onscroll             : function() {},
         onpreviewscroll      : function() {},
         
-        imageUpload          : false,
+        imageUpload          : true,
         imageFormats         : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
         imageUploadURL       : "",
         crossDomainUpload    : false,
@@ -157,7 +157,7 @@
         tocDropdown          : false,
         tocContainer         : "",
         tocStartLevel        : 1,              // Said from H1 to create ToC
-        htmlDecode           : false,          // Open the HTML tag identification 
+        htmlDecode           : true,          // Open the HTML tag identification 
         pageBreak            : true,           // Enable parse page break [========]
         atLink               : true,           // for @link
         emailLink            : true,           // for email address auto link
@@ -3902,7 +3902,7 @@
             tocContainer         : "",
             markdown             : "",
             markdownSourceCode   : false,
-            htmlDecode           : false,
+            htmlDecode           : true,
             autoLoadKaTeX        : true,
             pageBreak            : true,
             atLink               : true,    // for @link

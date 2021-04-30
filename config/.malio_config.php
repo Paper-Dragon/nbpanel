@@ -43,8 +43,10 @@ $Malio_Config['only_one_lang'] = 'zh-cn';   //  强制使用某种语言，支�
 // 支付宝目前支持 bitpayx | stripe | tomatopay | f2fpay | wolfpay | materialpay
 $Malio_Config['mups_alipay'] = 'bitpayx';   // Malio 聚合支付系统里面的 支付宝 要用的支付平台  
 // 微信支付目前支持 bitpayx | stripe | materialpay
-$Malio_Config['mups_wechat'] = 'bitpayx';   // Malio 聚合支付系统里面的 微信支付 要用的支付平台
+$Malio_Config['mups_wechat'] = 'none';   // Malio 聚合支付系统里面的 微信支付 要用的支付平台
 $Malio_Config['mups_minimum_amount'] = 0;   //  Malio 聚合支付系统限制最低的充值金额
+
+
 
 // 下面的选项在 Malio 聚合支付系统无效
 $Malio_Config['stripe_minimum_amount'] = 4;   // Stripe 支付接口可充值的最低金额
@@ -90,7 +92,7 @@ $Malio_Config['chatra_id'] = '';    // Chatra 的 ChatraID，可以在 Chatra �
 
 
 ####### 侧边栏 #######
-$Malio_Config['enable_relay'] = true;   // 是否显示中转规则
+$Malio_Config['enable_relay'] = false;   // 是否显示中转规则
 $Malio_Config['enable_ticket'] = true;   // 是否显示工单系统
 $Malio_Config['enable_detect'] = true;   // 是否显示审计系统
 $Malio_Config['enable_invite'] = true;   // 是否显示邀请注册
@@ -150,16 +152,16 @@ $Malio_Config['share_account'] = [    // 一个array为一个共享账号
 $Malio_Config['daily_bonus_mode'] = 'malio';  // 签到的模式，填写 sspanel 为原版模式，填写 malio 为不同等级给不同的签到流量
 $Malio_Config['daily_bonus_settings'] = array(  // 为不同等级给不同的签到流量，仅在 daily_bonus_mode 为 malio 时生效
     1 => array(  // 用户等级
-        'min' => 1000,  // 最低流量，单位为MB
-        'max' => 2000   // 最高流量，单位为MB
+        'min' => 100,  // 最低流量，单位为MB
+        'max' => 500   // 最高流量，单位为MB
     ),
     2 => array(
-        'min' => 1000,
-        'max' => 2000
+        'min' => 300,
+        'max' => 700
     ),
     3 => array(
-        'min' => 10000,
-        'max' => 20000
+        'min' => 700,
+        'max' => 1500
     ),
 );
 
@@ -170,11 +172,11 @@ $Malio_Config['shop_style'] = 'plans';    // 商店的显示风格， legacy为S
 $Malio_Config['shop_enable_autorenew'] = true;   // 商店是否显示自动续费的选项
 $Malio_Config['shop_enable_coupon'] = true;    // 商店是否显示试用优惠券选项
 
-$Malio_Config['shop_enable_trail_plan'] = false;   // 商店是否显示新用户试用选项
-$Malio_Config['shop_trail_plan_shopid'] = '12';   // 新用户试用的商品ID
+$Malio_Config['shop_enable_trail_plan'] = true;   // 商店是否显示新用户试用选项
+$Malio_Config['shop_trail_plan_shopid'] = '16';   // 新用户试用的商品ID
 
-$Malio_Config['index_one_row_plans'] = '3';   //  首页里每行显示多少个会员计划，可以写 3 或 4
-$Malio_Config['shop_one_row_plans'] = '3';   //  商店里每行显示多少个会员计划，可以写 3 或 4
+$Malio_Config['index_one_row_plans'] = '4';   //  首页里每行显示多少个会员计划，可以写 3 或 4
+$Malio_Config['shop_one_row_plans'] = '4';   //  商店里每行显示多少个会员计划，可以写 3 或 4
 
 // 每个会员计划不同时长所对应的商品ID（商品ID可以在管理面板的商品列表里找到），此项必须设置，不然商店购买功能无法正常工作
 // 可以复制 array 增加会员计划，比如增加第四个会员计划，使用 'plan_4' => array(...) 这样的格式
@@ -203,17 +205,17 @@ $Malio_Config['shop_enable_traffic_package'] = true;   // 商店是否显示流�
 $Malio_Config['shop_traffic_packages'] = [ // 商店流量叠加包的详细信息，一个array为一个流量叠加包。在商品列表添加流量包时只需要填写名称、价格、流量，其他参数默认即可
     array(
         'shopid' => 13, // 流量叠加包的商品ID
-        'traffic' => 10, // 单位为GB
+        'traffic' => 20, // 单位为GB
         'price' => 5 
     ),
     array(
         'shopid' => 14,
-        'traffic' => 20,
+        'traffic' => 40,
         'price' => 9 
     ),
     array(
         'shopid' => 15,
-        'traffic' => 30,
+        'traffic' => 60,
         'price' => 15 
     ),
 ];
@@ -226,7 +228,7 @@ $Malio_Config['topup_select_list'] = [9.9, 19.9, 29.9];  // 用户只能在这�
 
 
 ####### 我的账号 #######
-$Malio_Config['enable_2fa'] = true;   // 是否显示二步验证的选项
+$Malio_Config['enable_2fa'] = false;   // 是否显示二步验证的选项
 $Malio_Config['enable_delete'] = true;   // 是否显示删除账号的选项
 $Malio_Config['enable_telegram'] = true;   // 是否显示绑定 Telegram 账号的选项，禁用后登录页面的 “使用 Telegram 登录” 按钮会隐藏
 
@@ -235,7 +237,7 @@ $Malio_Config['enable_telegram'] = true;   // 是否显示绑定 Telegram 账号
 $Malio_Config['enable_node_load'] = true;   // 是否显示节点的负载
 $Malio_Config['enable_online_user'] = true;   // 是否显示节点的在线人数
 $Malio_Config['enable_node_traffic_rate'] = true;   // 是否显示节点的流量倍率
-$Malio_Config['enable_node_speedlimit'] = true;   // 是否显示节点的限速
+$Malio_Config['enable_node_speedlimit'] = false;   // 是否显示节点的限速
 $Malio_Config['flag_mode'] = 'node-name';   // 节点列表的国旗取值方式。node-name 为从节点名字前两个字取值（比如美国Vultr取值为美国）。node-info 为从节点状态取值，在节点列表里编辑节点，填写节点状态为 us 则显示美国国旗。us这个是国家ISO 3166码，不懂就谷歌。
 $Malio_Config['taiwan_flag'] = 'cn';   //  台湾的旗显示方式，cn为中国国旗，tw为台湾区旗
 
@@ -251,7 +253,7 @@ $Malio_Config['display_more_app_button'] = false;   // 教程页面是否显示�
 $Malio_Config['windows_client'] = 'cfw';    // Windows 教程的首选客户端，可选 cfw, ssr
 $Malio_Config['ios_client'] = 'quantumult';    // iOS 教程的首选客户端，可选 quantumult, shadowrocket, kitsunebi
 $Malio_Config['ios_sub_type'] = 'v2ray';    // iOS 客户端的一键导入的订阅类型，可选ssr、v2ray
-$Malio_Config['enable_ios_apple_id'] = true;    //  是否在 iOS 教程页面显示 Apple ID
+$Malio_Config['enable_ios_apple_id'] = false;    //  是否在 iOS 教程页面显示 Apple ID
 $Malio_Config['ios_apple_id'] = 'malio@icloud.com';   //  iOS 教程页面的 Apple ID 账号
 $Malio_Config['ios_apple_id_password'] = '1UPBOY~~';    // iOS 教程页面的 Apple ID 密码
 $Malio_Config['android_client'] = 'clash';    // Android 教程的首选客户端，可选 ssr, kitsunebi, v2rayng, surfboard, clash
