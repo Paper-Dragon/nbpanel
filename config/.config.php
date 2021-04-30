@@ -70,11 +70,11 @@ $_ENV['backup_notify'] = false;		//备份通知到TG群中
 
 //用户注册设置-----------------------------------------------------------------------------------------
 $_ENV['register_mode'] = 'open';					//注册模式。close：关闭，open：开放，invite：仅限邀请码
-$_ENV['defaultTraffic'] = 1;						//用户初始流量 单位GB
+$_ENV['defaultTraffic'] = 0;						//用户初始流量 单位GB
 $_ENV['user_expire_in_default'] = 3650;			//用户账户过期时间，在注册时设置。（天）
 $_ENV['user_class_default'] = 0;					//用户注册等级，在注册时设置。
-$_ENV['user_class_expire_default'] = 24;			//用户等级过期时间，在注册时设置。（小时）
-$_ENV['user_conn'] = 1;							//用户注册客户端数量限制，0为不限制
+$_ENV['user_class_expire_default'] = 3650;			//用户等级过期时间，在注册时设置。（小时）
+$_ENV['user_conn'] = 0;							//用户注册客户端数量限制，0为不限制
 $_ENV['user_speedlimit'] = 0;						//用户注册速度默认限制，0为不限制
 $_ENV['reg_auto_reset_day'] = 0;					//注册时的流量重置日，0为不重置
 $_ENV['reg_auto_reset_bandwidth'] = 0;				//需要重置的流量，0为不重置
@@ -93,7 +93,7 @@ $_ENV['mu_regex'] = '%5m%id.%suffix';				//单端口多用户混淆参数表达�
 
 #邀请链接
 $_ENV['inviteNum'] = 10;			//注册后的邀请链接可用次数
-$_ENV['invite_get_money'] = 1;		//新用户通过私人邀请链接注册时，获得奖励金额（作为初始资金）
+$_ENV['invite_get_money'] = 1;		//新用户通过私人邀请链接x注册时，获得奖励金额（作为初始资金）
 $_ENV['invite_price'] = -1;		//用户购买邀请码所需要的价格，价格小于0时视为不开放购买
 $_ENV['custom_invite_price'] = -1;		//用户定制邀请码所需要的价格，价格小于0时视为不开放购买
 
@@ -245,7 +245,7 @@ $_ENV['enable_checkin_captcha'] = false;	//启用签到验证码
 //支付系统设置----------------------------------------------------------------------------------------
 #取值 none | codepay | trimepay | f2fpay | chenAlipay | paymentwall | spay | tomatopay | bitpayx | flyfoxpay | payjs | f2fpay_payjs | stripe | payssion | yftpay
 # 当此项设置为 malio 时即可使用malio聚合支付系统
-$_ENV['payment_system']='none';
+$_ENV['payment_system']='bitpayx';
 
 # Stripe
 $_ENV['stripe_key'] = '';
@@ -298,7 +298,7 @@ $_ENV['zfbjk_qrcodeurl']='';
 
 # BitPay 数字货币支付（比特币、以太坊、EOS等） 商户后台获取授权码 https://merchants.mugglepay.com/
 #   客服和技术 24x7 在线支持： https://t.me/joinchat/GLKSKhUnE4GvEAPgqtChAQ
-$_ENV['bitpay_secret'] = '';
+$_ENV['bitpay_secret'] = 'b3716b60-a702-11eb-ac2f-93ff657d5f88';
 
 # materialpay
 $_ENV['materialpay_appid']='';				//AppID
@@ -444,7 +444,7 @@ $_ENV['auto_detect_ban_allow_users'] = [];
 $_ENV['auto_detect_ban_type'] = 1;
 
 // 仁慈模式每次执行封禁所需的触发次数
-$_ENV['auto_detect_ban_number'] = 30;
+$_ENV['auto_detect_ban_number'] = 5;
 
 // 仁慈模式每次封禁的时长 (分钟)
 $_ENV['auto_detect_ban_time'] = 60;
