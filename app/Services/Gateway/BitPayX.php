@@ -89,8 +89,8 @@ class BitPayX extends AbstractPayment
         $type = $request->getParam('type');
         $mobile = $request->getParam('mobile');
         // file_put_contents(BASE_PATH.'/bitpay_purchase.log', $price . "  " . $type . "\r\n", FILE_APPEND);
-        if ($price <= 0) {
-            return json_encode(['errcode' => -1, 'errmsg' => '请输入合理的金额。']);
+        if ($price <= 5) {
+            return json_encode(['errcode' => -1, 'errmsg' => '订单状态失败，请查看的金额是否大于5元。']);
         }
         if (MalioConfig::get('bitpyax_alipay_type') == 'ALIGLOBAL' && $type == 'ALIPAY') {
             $type = 'ALIGLOBAL';
