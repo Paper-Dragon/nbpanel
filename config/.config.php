@@ -35,7 +35,7 @@ $_ENV['checkNodeIp'] = true; //是否webapi验证节点ip
 // 订阅中的公告信息
 // 使用数组形式，将会添加在订阅列表的顶端
 // 可用于为用户推送最新地址等信息，尽可能简短且数量不宜太多
-$_ENV['sub_message']       = [];
+$_ENV['sub_message']       = ['音速科技'];
 $_ENV['enable_sub_extend'] = true;      // 是否开启订阅中默认显示流量剩余以及账户到期时间以及 sub_message 中的信息
 $_ENV['disable_sub_mu_port'] = false;   // 将订阅中单端口的信息去除
 
@@ -70,10 +70,10 @@ $_ENV['backup_notify'] = false;		//备份通知到TG群中
 
 //用户注册设置-----------------------------------------------------------------------------------------
 $_ENV['register_mode'] = 'open';					//注册模式。close：关闭，open：开放，invite：仅限邀请码
-$_ENV['defaultTraffic'] = 0;						//用户初始流量 单位GB
+$_ENV['defaultTraffic'] = 5;						//用户初始流量 单位GB
 $_ENV['user_expire_in_default'] = 3650;			//用户账户过期时间，在注册时设置。（天）
-$_ENV['user_class_default'] = 0;					//用户注册等级，在注册时设置。
-$_ENV['user_class_expire_default'] = 3650;			//用户等级过期时间，在注册时设置。（小时）
+$_ENV['user_class_default'] = 1;					//用户注册等级，在注册时设置。
+$_ENV['user_class_expire_default'] = 24;			//用户等级过期时间，在注册时设置。（小时）
 $_ENV['user_conn'] = 0;							//用户注册客户端数量限制，0为不限制
 $_ENV['user_speedlimit'] = 0;						//用户注册速度默认限制，0为不限制
 $_ENV['reg_auto_reset_day'] = 0;					//注册时的流量重置日，0为不重置
@@ -121,7 +121,7 @@ $_ENV['port_price_specify'] = -1;		//用户指明钦定端口所需要的价格�
 $_ENV['class_expire_reset_traffic'] = 0;		//等级到期时重置为的流量值，单位GB，小于0时不重置
 $_ENV['account_expire_delete_days'] = -1;		//账户到期几天之后会删除账户，小于0时不删除
 $_ENV['enable_kill'] = true;					//是否允许用户注销账户
-$_ENV['notify_limit_mode'] = false;			//false为关闭，per为按照百分比提醒，mb为按照固定剩余流量提醒
+$_ENV['notify_limit_mode'] = per;			//false为关闭，per为按照百分比提醒，mb为按照固定剩余流量提醒
 $_ENV['notify_limit_value'] = 20;			//当上一项为per时，此处填写百分比；当上一项为mb时，此处填写流量
 $_ENV['mergeSub'] = true;						//合并订阅设置 可选项 false / true
 
@@ -165,10 +165,10 @@ $_ENV['group_id_allowed_to_join']   = [];           //允许加入的群组 ID�
 $_ENV['telegram_admins']            = ["1773641027"];           //Telegram 管理员 ID，格式为 PHP 数组
 $_ENV['unbind_kick_member']         = false;        //用户解绑 Telegram 账户后自动踢出群组
 $_ENV['enable_not_admin_reply']     = true;         //非管理员操作管理员功能是否回复
-$_ENV['not_admin_reply_msg']        = '!';          //非管理员操作管理员功能的回复内容
-$_ENV['no_user_found']              = '!';          //管理员操作时，找不到用户的回复
-$_ENV['no_search_value_provided']   = '!';          //管理员操作时，没有提供用户搜索值的回复
-$_ENV['data_method_not_found']      = '!';          //管理员操作时，修改数据的字段没有找到的回复
+$_ENV['not_admin_reply_msg']        = '哥哥还要努力哦~你还不是我的Master呢！';          //非管理员操作管理员功能的回复内容
+$_ENV['no_user_found']              = '大爷，这个用户失踪了呢！';          //管理员操作时，找不到用户的回复
+$_ENV['no_search_value_provided']   = '大爷，这个用户失踪了呢！';          //管理员操作时，没有提供用户搜索值的回复
+$_ENV['data_method_not_found']      = '哥哥，我没有找到这个可爱的属性呢！~';          //管理员操作时，修改数据的字段没有找到的回复
 $_ENV['delete_message_time']        = 180;          //在以下时间后删除用户命令触发的 bot 回复，单位：秒，删除时间可能会因为定时任务而有差异，为 0 代表不开启此功能
 $_ENV['delete_admin_message_time']  = 86400;        //在以下时间后删除管理命令触发的 bot 回复，单位：秒，删除时间可能会因为定时任务而有差异，为 0 代表不开启此功能
 $_ENV['enable_delete_user_cmd']     = true;        //自动删除群组中用户发送的命令，使用 delete_message_time 配置的时间，删除时间可能会因为定时任务而有差异
