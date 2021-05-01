@@ -18,6 +18,16 @@
 </head>
 
 <body>
+<!-- START CODE Attention! Do not modify this code; -->
+<script>var fm = "USD";var to = "CNY";var tz = "timezone";var sz = "1x1";var lg = "cn";var st = "info";var lr = "1";var rd = "1";</script><a href="https://cn.currencyrate.today/converter-widget" title="货币转换器"><script src="//currencyrate.today/converter"></script>
+
+</a><div style="font-size:.8em;"></div>
+
+<!-- Attention! Do not modify this code; END CODE -->
+
+
+
+
   <div id="app">
     <section class="section">
       <div class="container mt-5">
